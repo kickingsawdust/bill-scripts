@@ -1,6 +1,33 @@
 ToDo: Explain the set up process for using in mon360 
 
-# Incomplete
-To set this up you need all three of these files contained the root of the zenoss-rm-api-master 
-The rmApi bundle must be downloaded and installed at /opt/serviced/var/volumes/{volume_id}/var-zenpacks/ on the DFS of the intended system ie mon360. 
+Purpose: Automate creation of ZenDesk ticket to inform customers that a collector host has gone offline
+
+Requirements: https://github.com/zenoss/zenoss-RM-api
+
+Setup: 
+
+Download the RM API bundle and place it on the DFS at:
+
+/opt/serviced/var/volumes/{volume_id}/var-zenpacks/zenoss-RM-api-master/
+
+Add collectorHostDown.py, collectorHostUp.py and setProductionState.py to the directory above
+
+Create an CZ API user and key on mon360 and configure creds.cfg file in zenoss-RM-api-master per rmApi documentation
+
+Create a ZenDesk user with an API key to populate in collectorHostDown.py and collectorHostUp.py files
+
+In mon360 create a command notification that paths appropriately to the scripts, examples:
+
+-------------------------------------------------------------
+	Command:
+		/var/zenoss/zenoss-RM-api-master/collectorHostDown.py -c ${evt/device} -e ${dev/cEmergencyContact} -E ${evt/evid} && /var/zenoss/zenoss-RM-api-master/setProductionState.py ${evt/device} 300
+
+	Clear Command:
+		/var/zenoss/zenoss-RM-api-master/collectorHostUp.py -c ${evt/device} -e ${dev/cEmergencyContact} -E ${evt/evid} -n ${evt/zenoss.IncidentManagement.number} &&
+/var/zenoss/zenoss-RM-api-master/setProductionState.py ${evt/device} 1000
+-------------------------------------------------------------
+
+Add the appropriate collector host down detecting trigger to the notification
+
+Validate
 
