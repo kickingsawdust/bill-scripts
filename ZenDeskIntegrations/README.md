@@ -26,8 +26,8 @@ In mon360 create a command notification that paths appropriately to the scripts,
 		/var/zenoss/zenoss-RM-api-master/collectorHostDown.py -c ${evt/device} -e ${dev/cEmergencyContact} -E ${evt/evid} && /var/zenoss/zenoss-RM-api-master/setProductionState.py ${evt/device} 300
 
 	Clear Command:
-		/var/zenoss/zenoss-RM-api-master/collectorHostUp.py -c ${evt/device} -e ${dev/cEmergencyContact} -E ${evt/evid} -n ${evt/zenoss.IncidentManagement.number} &&
-/var/zenoss/zenoss-RM-api-master/setProductionState.py ${evt/device} 1000
+		/var/zenoss/zenoss-RM-api-master/collectorHostUp.py -c ${evt/device} -e ${dev/cEmergencyContact} -E ${evt/evid} -n ${evt/zenoss.IncidentManagement.number} && /var/zenoss/zenoss-RM-api-master/setProductionState.py ${evt/device} 1000
+
 -------------------------------------------------------------
 
 Add the appropriate collector host down detecting trigger to the notification
