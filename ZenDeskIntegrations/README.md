@@ -36,3 +36,7 @@ Add the appropriate collector host down detecting trigger to the notification
 Validate:
 
 
+To Do: 
+
+Adjust messaging in the host down script, provide actions to perform, next steps, etc
+
