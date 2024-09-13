@@ -1,4 +1,6 @@
----Configuration---
+---ZenDesk Integration for mon360---
+
+Note: Eventually this may all be moved into the IncidentManagement ZenPack but for now this works
 
 
 Purpose: Automate creation of ZenDesk ticket to inform customers that a collector host has gone offline
