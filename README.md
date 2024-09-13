@@ -1,3 +1,2 @@
 # bill-scripts
-Bill's scripts repo
-test
+Just some scripts
