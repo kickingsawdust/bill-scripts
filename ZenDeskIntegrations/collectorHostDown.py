@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 ##############################################################################
 # Copyright (C) Zenoss, Inc. 2024, all rights reserved.
-# Author: Bill Loss 'closs  @ zenoss.com'
+# Author: Team Pinecone
+# Contact: Bill Loss 'closs  @ zenoss.com'
 ##############################################################################
 
 import sys
