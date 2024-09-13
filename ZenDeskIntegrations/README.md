@@ -1,8 +1,11 @@
-ToDo: Explain the set up process for using in mon360 
+---Configuration---
+
 
 Purpose: Automate creation of ZenDesk ticket to inform customers that a collector host has gone offline
 
+
 Requirements: https://github.com/zenoss/zenoss-RM-api
+
 
 Setup: 
 
@@ -29,5 +32,7 @@ In mon360 create a command notification that paths appropriately to the scripts,
 
 Add the appropriate collector host down detecting trigger to the notification
 
-Validate
+
+Validate:
+
 
