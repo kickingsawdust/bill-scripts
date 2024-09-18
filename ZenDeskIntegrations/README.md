@@ -32,7 +32,10 @@ In mon360 create a command notification that paths appropriately to the scripts,
 
 -------------------------------------------------------------
 
+Add cEmergencyContact to mon360 and populate it with an email, this is a bit of a challenge since we have more than one email for a lot of customers and none for others ToDo: work out a solution for this.
+
 Add the appropriate collector host down detecting trigger to the notification
+
 
 
 Validate:
