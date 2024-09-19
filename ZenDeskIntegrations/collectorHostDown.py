@@ -62,10 +62,10 @@ headers = {
 }
 
 # ChangeMe: should be zendesk automation user ie support@zenoss.com or automation@zenoss.com
-email_address = 'closs@zenoss.com'
+email_address = 'AUTOMATION-USER-EMAIL-HERE'
 
 # ChangeMe to match above user
-api_token = 'DeqYUrk7BCXBOE7V7Pehcw70oI5v37i58ZcDnoNh'
+api_token = 'YOUR-TOKEN-HERE'
 
 # Use basic authentication
 auth = HTTPBasicAuth('{}/token'.format(email_address), api_token)
