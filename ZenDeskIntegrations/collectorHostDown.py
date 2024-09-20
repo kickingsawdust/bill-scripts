@@ -25,7 +25,7 @@ if not ('logging' in dir()):
 parser = argparse.ArgumentParser(description='grab host and zendesk user.')
 parser.add_argument("-c", "--collector", action="store", dest="collector", required=True, help="Down Collector host ID")
 parser.add_argument("-e", "--email", action="store", dest="email", required=True, help="ZenDesk user's email to be notified")
-parser.add_argument("-C", "--emailCCs", action="store", dest="emailCCs", required=False, nargs='+', help="List of ZenDesk user's emails to be CC'd on the ticket")
+parser.add_argument("-C", "--emailCCs", action="store", dest="emailCCs", required=False, nargs='*', help="List of ZenDesk user's emails to be CC'd on the ticket")
 parser.add_argument("-E", "--evid", action="store", dest="evid", required=True, help="should be the current evid from evt/evid")
 args = parser.parse_args()
 
@@ -33,8 +33,9 @@ args = parser.parse_args()
 #print "Args = %s " % args
 
 ccs = []
-for e in args.emailCCs:
-    ccs.append({"user_email": e, "action": "put"})
+if args.emailCCs:
+    for e in args.emailCCs:
+        ccs.append({"user_email": e, "action": "put"})
 
 # ToDo: convert to proper logging
 print "CCs = %s" % ccs
