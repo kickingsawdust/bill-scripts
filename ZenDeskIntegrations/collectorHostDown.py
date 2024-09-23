@@ -47,7 +47,11 @@ payload = {
     "submitter_id": 29771010991501,
     "requester": args.email,
     "comment": {
-      "body": "Collector host " + args.collector + " is no longer connected to Zenoss Cloud, please restart, yada yada."
+      "body": "Hello,
+
+We have lost connectivity to collector " + args.collector + ". This will require remediation on your part in order to bring this collector back online. If you are unaware of any network changes, please attempt to reboot the collector appliance.
+
+We will be placing this collector into maintenance in our internal monitoring until this issue is resolved"
     },
     "priority": "urgent",
     "type": "incident",
