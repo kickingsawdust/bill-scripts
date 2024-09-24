@@ -47,13 +47,11 @@ payload = {
     "submitter_id": 29771010991501,
     "requester": args.email,
     "comment": {
-      "body": "Hello,
-
-We have lost connectivity to collector " + args.collector + ". This will require remediation on your part in order to bring this collector back online. If you are unaware of any network changes, please attempt to reboot the collector appliance.
-
-We will be placing this collector into maintenance in our internal monitoring until this issue is resolved"
+      "body": "Hello,\n\n"+
+      "We have lost connectivity to collector " + args.collector + ". This will require remediation on your part in order to bring this collector back online.\n\n"+
+      "If you are unaware of any network changes, please attempt to reboot the collector appliance. We will be placing this collector into maintenance in our internal monitoring until this issue is resolved.\n\n"+"Thanks,\n"+"Zenoss Support"
     },
-    "priority": "urgent",
+    "priority": "normal",
     "type": "incident",
     "subject": "Collector host " + args.collector + " offline",
     "email_ccs": ccs
@@ -67,10 +65,11 @@ headers = {
 }
 
 # ChangeMe: should be zendesk automation user ie support@zenoss.com or automation@zenoss.com
-email_address = 'AUTOMATION-USER-EMAIL-HERE'
+email_address = 'closs@zenoss.com'
 
 # ChangeMe to match above user
-api_token = 'YOUR-TOKEN-HERE'
+api_token = 'DeqYUrk7BCXBOE7V7Pehcw70oI5v37i58ZcDnoNh'
+
 
 # Use basic authentication
 auth = HTTPBasicAuth('{}/token'.format(email_address), api_token)
